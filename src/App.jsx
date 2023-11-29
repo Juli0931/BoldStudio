@@ -1,9 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import { LoginAdminPage, ControllerAdminPage } from './auth/pages';
-import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage.jsx"
+import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage.jsx";
+import { AuthProvider } from './auth/authContext.jsx';
 
 export function App() {
   return (
+    <AuthProvider>
     <Routes>
       <Route
           path='/'
@@ -22,5 +24,6 @@ export function App() {
         
         {/* Otras rutas */}
     </Routes>
+    </AuthProvider>
   );
 }

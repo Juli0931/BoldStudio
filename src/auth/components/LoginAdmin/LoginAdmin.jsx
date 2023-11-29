@@ -1,34 +1,33 @@
 //https://vitejs.dev/guide/assets.html
 import { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-// import './LoginAdminStyle.css'
+import { useAuth } from '../../authContext';
+import { useNavigate } from 'react-router-dom';
 
-export function LoginAdmin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function LoginAdmin() {
+  const navigate = useNavigate(); 
+  const auth = useAuth();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  console.log(email, password);
 
-  const handleLogin = async (e) => {
+  const handleLogin = async(e) =>{
     e.preventDefault();
-
-    const auth = getAuth();
-    
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Enviar a controllerAdmin
-    } catch (error) {
-      // Error
-      console.error(error);
+    try{
+      await auth.login(email, password)
+      navigate('/controllerAdmin')
+    }catch(e){
+      alert('a')
     }
-  };
+  }
 
   return (
     <div className='login'>
     <h2 className='titleLogin'>Bold Studio.</h2>
-      <form onSubmit={handleLogin}>
+      <form>
         <input
-          type="text"
+          type="email"
           placeholder="E-mail"
-          value={email}
+          value={email} 
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
@@ -37,8 +36,10 @@ export function LoginAdmin() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button onClick={(e) => handleLogin(e)}>Login</button>
       </form>
     </div>
   );
 }
+
+export default LoginAdmin;
