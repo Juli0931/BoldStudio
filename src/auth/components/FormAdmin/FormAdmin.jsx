@@ -26,7 +26,7 @@ export function FormAdmin({ onFormSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onFormSubmit({ title, description, category, uploadedImages });
+    onFormSubmit({ title, description, category, uploadedFiles });
     setTitle("");
     setDescription("");
     setCategory("");

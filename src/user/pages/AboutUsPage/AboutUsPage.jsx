@@ -3,7 +3,7 @@ import { HeaderTitle, SocialMedia } from "../../components";
 export function AboutUsPage() {
   return (
     <div>
-      <h2>About Us</h2>
+      <HeaderTitle title="About us" />
       <p>Bold Studio is a leading web development company, <br />
       specializing in the creation of websites with focus on both<br />
       Front-end and Back-end development. <br />
