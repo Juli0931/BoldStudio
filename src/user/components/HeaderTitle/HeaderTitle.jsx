@@ -1,9 +1,10 @@
-import styles from './HeaderTitleStyle.css'
+import './HeaderTitleStyle.css'
+import Logo from '../../assets/LogoBold.png'
 
 export function HeaderTitle({ title }) {
   return (
     <>
-      <h1>{title}</h1>
+      <img src={Logo}/>
     </>
   )
 }

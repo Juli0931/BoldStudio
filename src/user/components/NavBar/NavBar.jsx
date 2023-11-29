@@ -1,5 +1,6 @@
-import styles from './NavBar.css'
+import './NavBar.css'
 import { Link } from 'react-router-dom';
+import Logo from '../../assets/LogoBlanco.png'
 
 export function NavBar() {
   const scrollToSection = (sectionId) => {
@@ -11,11 +12,11 @@ export function NavBar() {
 
   return (
     <nav>
-      <img src="../../assets/LogoBold.png" alt="Logo Bold Studio" />
-      <ul>
-        <li onClick={() => scrollToSection("home")}>Bold Studio</li>
-        <li onClick={() => scrollToSection("work")}>Work</li>
-        <li onClick={() => scrollToSection("contact")}>Contact Us</li>
+      <img src={Logo} alt="Logo Bold Studio" />
+       <ul>
+        <li onClick={() => scrollToSection("home")}>ABOUT US</li>
+        <li onClick={() => scrollToSection("work")}>WORK</li>
+        <li onClick={() => scrollToSection("contact")}>CONTACT</li>
         <li><Link to="/login">Admin</Link></li>
       </ul>
     </nav>

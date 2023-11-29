@@ -1,4 +1,40 @@
-nav{
+* {
+    margin: 0;
+}
+
+nav {
+    background-color: #121113;
+    position: fixed;
+    top: 0;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+nav img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    align-items: end;
+    color: #B6B5B3;
+}
+
+nav li:hover {
+    color: #68DADB;
+    font-weight: 600;
+}
+
+nav li.active {
+    color: #68DADB;
+}
+
+
+
+/* nav{
     padding: 2rem;
     position: absolute;
     display: flex;
@@ -15,4 +51,4 @@ ul{
     flex-direction: column;
     align-items: end;
     list-style: none;
-}
+} */

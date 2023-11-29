@@ -1,4 +1,4 @@
-import styles from './HomePageStyle.css'
+import './HomePageStyle.css'
 import { HeaderTitle, SocialMedia } from "../../components";
 
 export function HomePage() {
