@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './FilterStyle.css'
+// import styles from './FilterStyle.css'
 
 export function FilterWork ({ onFilter }) {
   const [filterText, setFilterText] = useState('');

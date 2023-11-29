@@ -1,7 +1,7 @@
 //https://vitejs.dev/guide/assets.html
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import './LoginAdminStyle.css'
+// import './LoginAdminStyle.css'
 
 export function LoginAdmin() {
   const [email, setEmail] = useState('');

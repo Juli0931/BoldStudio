@@ -1,5 +1,4 @@
 import { Value, HeaderTitle } from './../../components'; 
-import styles from './ValuesPageStyle.css'
 
 const valuesData = [
     {

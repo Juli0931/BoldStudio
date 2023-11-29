@@ -1,4 +1,4 @@
-import './HeaderTitleStyle.css'
+// import './HeaderTitleStyle.css'
 import Logo from '../../assets/LogoBold.png'
 
 export function HeaderTitle({ title }) {

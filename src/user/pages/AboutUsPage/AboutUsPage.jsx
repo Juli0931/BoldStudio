@@ -1,4 +1,3 @@
-import styles from './AboutUsStyle.css'
 import { HeaderTitle, SocialMedia } from "../../components";
 
 export function AboutUsPage() {

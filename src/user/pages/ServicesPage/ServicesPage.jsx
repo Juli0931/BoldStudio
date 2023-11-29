@@ -1,4 +1,3 @@
-import styles from './ServicesPageStyle.css'
 
 export function ServicesPage() {
   return (

@@ -1,5 +1,4 @@
 import { HeaderTitle, FilterWork, SocialMedia } from "../../components";
-import styles from './WorkPageStyle.css'
 
 export function WorkPage() {
   return (

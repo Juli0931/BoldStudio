@@ -1,5 +1,4 @@
 import { HeaderTitle, SocialMedia } from "../../components";
-import styles from './ContactUsStyle.css'
 
 export function ContactUsPage() {
   return (
