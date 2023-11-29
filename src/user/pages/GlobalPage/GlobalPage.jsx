@@ -1,4 +1,5 @@
-import { NavBar } from "../components"
+import './GlobalPage.css'
+import { NavBar } from "../../components"
 import {
   HomePage,
   AboutUsPage,
@@ -7,7 +8,7 @@ import {
   WorkPage,
   // ProjectDetailPage,
   ContactUsPage
-} from "../pages";
+} from "..";
 
 export function GlobalPage() {
   return (
@@ -18,7 +19,9 @@ export function GlobalPage() {
         <HomePage />
       </section>
 
-      <AboutUsPage />
+      <section id="about">
+        <AboutUsPage />
+      </section>
 
       <section id="services">
         <ServicesPage />

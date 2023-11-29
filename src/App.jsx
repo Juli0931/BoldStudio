@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { LoginAdminPage, ControllerAdminPage } from './auth/pages';
-import { GlobalPage } from "./user/pages/GlobalPage.jsx"
+import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage.jsx"
 
 export function App() {
   return (

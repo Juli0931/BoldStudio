@@ -1,35 +1,41 @@
-div .BodyHome{
-    width: 100vw;
-    height: 100vh;
+.BodyHome {
+    width: 100%;
+    margin-top: 150px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
+.encabezado {
+    margin-left: 10rem;
+}
 
-.principal {
+.Container {
     display: flex;
+    height: 100px;
 }
 
-.Container{
-    display: flex;
-    flex-direction: row;
-    width: 10rem;
-    height: auto;
-    padding: 0;
-    margin-left: 20%;
-}
-.Comillas{
-    padding: 0;
-    margin: -50px 0;
+.ComillasHome {
     color: #ED447B;
-    position: relative;
+    font-size: 5.5rem;
+    margin-top: 0;
 }
 
 .slogan {
-    margin: 0;
     color: #B6B5B3;
-    font-weight: 600;
-    font-size: 1.7rem;
-    margin-left: 10px;
+    font-weight: 100;
+    font-size: 1.75rem;
+    margin-top: 15px;
+}
+
+.assetHome img {
+    width: auto;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+}
+
+.social {
+    margin-top: 0;
+    padding-left: 2.5rem;
 }

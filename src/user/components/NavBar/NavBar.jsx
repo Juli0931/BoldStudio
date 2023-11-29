@@ -11,13 +11,15 @@ export function NavBar() {
   };
 
   return (
-    <nav>
-      <img src={Logo} alt="Logo Bold Studio" />
+    <nav className='nav' path>
+      <ul>
+        <li><img src={Logo} alt="Logo Bold Studio"/></li>
+      </ul>
        <ul>
-        <li onClick={() => scrollToSection("home")}>ABOUT US</li>
+        <li onClick={() => scrollToSection("about")}>ABOUT US</li>
         <li onClick={() => scrollToSection("work")}>WORK</li>
         <li onClick={() => scrollToSection("contact")}>CONTACT</li>
-        <li><Link to="/login">Admin</Link></li>
+        {/* <li><Link to="/login">Admin</Link></li> */}
       </ul>
     </nav>
   );
