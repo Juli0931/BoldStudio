@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { StaffMember, HeaderTitle } from './../../components';
 import Dilan from '../../assets/Dilan.png';
 import Santiago from '../../assets/Santiago.png';
+import Juli from '../../assets/Juli.png';
 import './StaffPage.css';
 
 const staffData = [
   { img: Santiago, role: 'BACKEND DEVELOPER' },
-  { img: Dilan, role: 'FRONTEND DEVELOPER' },
+  { img: Juli, role: 'FRONTEND DEVELOPER' },
   { img: Santiago, role: 'UI DESIGNER' },
   { img: Dilan, role: 'UX DESIGNER' },
 ];
