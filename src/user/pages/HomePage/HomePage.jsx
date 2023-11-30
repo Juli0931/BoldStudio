@@ -9,7 +9,7 @@ export function HomePage() {
     <div>
         <div className='BodyHome'>
           <div className='encabezado'>
-            <img src={Logo}/>
+            <img src={Logo} className='logoHome'/>
             <div className='Container'>
               <h1 className='ComillasHome'>"</h1>
               <h3 className='slogan'> We're passionate about design, <br></br>code and everything in between.</h3>
