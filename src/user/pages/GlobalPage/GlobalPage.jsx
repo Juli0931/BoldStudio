@@ -1,4 +1,3 @@
-import './GlobalPage.css'
 import { NavBar } from "../../components"
 import {
   HomePage,
