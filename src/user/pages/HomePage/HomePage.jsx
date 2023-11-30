@@ -1,5 +1,5 @@
 import './HomePageStyle.css'
-import { HeaderTitle, SocialMedia } from "../../components";
+import { SocialMedia } from "../../components";
 import Flor from '../../assets/ImgHome.png'
 import Logo from '../../assets/LogoBold.png'
 

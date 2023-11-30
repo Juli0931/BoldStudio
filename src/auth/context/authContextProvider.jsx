@@ -27,7 +27,11 @@ export function AuthContextProvider({ children }) {
 
   const register = async (email, password) => {
     try {
-      const response = await createUserWithEmailAndPassword(auth, email, password);
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       console.log(response);
     } catch (error) {
       console.error("Error al registrar:", error.message);

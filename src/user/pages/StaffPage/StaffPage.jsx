@@ -1,45 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { StaffMember, HeaderTitle } from './../../components';
-import Dilan from '../../assets/Dilan.png';
-import Santiago from '../../assets/Santiago.png';
-import './StaffPage.css';
+import { StaffMember, HeaderTitle } from './../../components'; 
 
+//Pendiente de agregar las fotos
 const staffData = [
-  { img: Santiago, role: 'BACKEND DEVELOPER' },
-  { img: Dilan, role: 'FRONTEND DEVELOPER' },
-  { img: Santiago, role: 'UI DESIGNER' },
-  { img: Dilan, role: 'UX DESIGNER' },
+  { img: '', role: 'FRONTEND DEVELOPER' },
+  { img: '', role: 'BACKEND DEVELOPER' },
+  { img: '', role: 'UI DESIGNER' },
+  { img: '', role: 'UX DESIGNER' },
 ];
 
-export function StaffPage() {
-  const [showTitle, setShowTitle] = useState(false);
-  const colors = ['#01B0B5', '#FFF', '#ED447B', '#121113'];
-  const staffSectionRef = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setShowTitle(entry.isIntersecting);
-      });
-    }, options);
-
-    if (staffSectionRef.current) {
-      observer.observe(staffSectionRef.current);
-    }
-
-    return () => {
-      if (staffSectionRef.current) {
-        observer.unobserve(staffSectionRef.current);
-      }
-    };
-  }, []);
-
+export function StaffPage (){
   return (
     <div className='staffBody'>
       {showTitle && (

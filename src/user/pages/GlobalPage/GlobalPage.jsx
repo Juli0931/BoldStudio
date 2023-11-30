@@ -7,7 +7,7 @@ import {
   WorkPage,
   StaffPage,
   // ProjectDetailPage,
-  ContactUsPage
+  ContactUsPage,
 } from "..";
 
 export function GlobalPage() {
@@ -15,8 +15,8 @@ export function GlobalPage() {
     <div className='scroll'>
 
       <NavBar />
-
-        <section id="home">
+      <div className="scroll">
+      <section id="home">
           <HomePage />
         </section>
 
@@ -44,6 +44,7 @@ export function GlobalPage() {
           <ContactUsPage />
         </section>
 
-    </div>
+      </div>
+    </>
   );
 }
