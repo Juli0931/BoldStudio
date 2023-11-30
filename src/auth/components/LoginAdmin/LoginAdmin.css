@@ -69,7 +69,7 @@ a {
     font-family: 'Poppins';
 }
 
-h3 {
+.formContainer h3 {
     text-align: center;
     color: #121113;
     margin-top: 50px;

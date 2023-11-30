@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useProject } from '../../hooks/useProject'; 
+import './FilterWork.css'
 
 export function FilterWork({ onFilter }) {
   const { projects } = useProject();
@@ -24,34 +25,44 @@ export function FilterWork({ onFilter }) {
 
   return (
     <>
-    <div className='filterContainer'>
-      <input
-        type="text"
-        placeholder="Search names, projects or categories"
-        value={filterText}
-        onChange={handleFilterTextChange}
-      />
-      <select value={selectedCategory} onChange={handleCategoryChange}>
-        <option value="all">All</option>
-        <option value="App / Web Development">App / Web Development</option>
-        <option value="UI Design">UI Design</option>
-        <option value="UX Design">UX Design</option>
-        <option value="Prototyping">Prototyping</option>
-        <option value="Branding">Branding</option>
-      </select>
-    </div>
+    <div className='filterBody'>
 
-      <div>
+      <div className='filterContainer'>
+        <h3>Filter By:</h3>
+
+        <div className='filterName'>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            placeholder="Search names, projects or categories"
+            value={filterText}
+            onChange={handleFilterTextChange}
+          />
+        </div>
+
+        <select value={selectedCategory} onChange={handleCategoryChange}>
+          <option value="all">All</option>
+          <option value="App / Web Development">App / Web Development</option>
+          <option value="UI Design">UI Design</option>
+          <option value="UX Design">UX Design</option>
+          <option value="Prototyping">Prototyping</option>
+          <option value="Branding">Branding</option>
+        </select>
+      </div>
+
+      <div className='cardBody'>
         {searchedProjects.map(project => (
           <div key={project.id} className='card'>
-            <h2>{project.title}</h2>
+            <img src={project.imageUrl}/>
+            <h3>{project.title}</h3>
             <p>{project.description}</p>
             <p>{project.category}</p>
-            <p>{project.project}</p>
-            <img src={project.imageUrl}/>
+            {/* <p>{project.project}</p> */}
           </div>
         ))}
       </div>
+
+    </div>
     </>
   );
 }
