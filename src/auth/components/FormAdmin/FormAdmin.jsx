@@ -3,6 +3,7 @@ import { db } from "../../../firebase/firebase.config";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import "firebase/firestore";
+import './FormAdmin.css'
 
 export function FormAdmin({ onFormSubmit }) {
   const [title, setTitle] = useState("");
@@ -75,7 +76,7 @@ export function FormAdmin({ onFormSubmit }) {
   return (
     <div>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
+        <div className="inputContainer">
           <label>Title:</label>
           <input
             type="text"
@@ -84,7 +85,7 @@ export function FormAdmin({ onFormSubmit }) {
             required
           />
         </div>
-        <div>
+        <div className="inputContainer">
           <label>Description:</label>
           <input
             type="text"
@@ -93,7 +94,7 @@ export function FormAdmin({ onFormSubmit }) {
             required
           />
         </div>
-        <div>
+        <div className="filterPost">
           <label>Category:</label>
           <select value={category} onChange={(e) => handleCategoryChange(e)} required>
             <option value="">Select a category</option>
@@ -104,7 +105,7 @@ export function FormAdmin({ onFormSubmit }) {
             <option value="Branding">Branding</option>
           </select>
         </div>
-        <div>
+        <div className="inputContainer">
           <label>Project link:</label>
           <input
             type="text"
@@ -112,15 +113,15 @@ export function FormAdmin({ onFormSubmit }) {
             onChange={(e) => handleProject(e)}
             required
           />
-        </div>
-        <div>
+        </div >
+        <div className="uplodadFileInput">
         <label>Miniature:</label>
         <input
         type="file"
         accept="image/*"
         onChange={handleImageChange}
         /></div>
-        <button type="submit">Publish</button>
+        <button type="submit" className="publishButton">Publish</button>
       </form>
 
       {showSuccessModal && (

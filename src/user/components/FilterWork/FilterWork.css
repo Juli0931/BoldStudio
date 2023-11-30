@@ -65,7 +65,12 @@
     grid-auto-rows: minmax(100px, auto);
 }
 
+.card{
+    margin-right: 1rem;
+}
+
 .card img{
     width: 200px;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
 }

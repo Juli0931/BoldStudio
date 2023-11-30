@@ -1,5 +1,7 @@
 import React from "react";
 import { FormAdmin } from "../../components";
+import {NavBar} from "../../../user/components/index"
+import './controllerAdmin.css'
 
 export function ControllerAdminPage() {
   const handleFormSubmit = (formData) => {
@@ -7,9 +9,12 @@ export function ControllerAdminPage() {
   };
 
   return (
-    <div>
+    <>
+    <NavBar />
+    <div className="controllerBody">
       <h1>Admin Control Panel</h1>
       <FormAdmin onFormSubmit={handleFormSubmit} />
     </div>
+    </>
   );
 }

@@ -57,8 +57,8 @@ export function FilterWork({ onFilter }) {
       <div className='cardBody'>
         {searchedProjects.map(project => (
           <div key={project.id} className='card'>
-            <img src={project.imageUrl}/>
-            <h3>{project.title}</h3>
+            <a href={project.project} target="_blank" rel="noopener"><img src={project.imageUrl}/></a>
+            <a href={project.project} target="_blank" rel="noopener"><h3>{project.title}</h3></a>
             <p>{project.description}</p>
             <p>{project.category}</p>
             {/* <p>{project.project}</p> */}
