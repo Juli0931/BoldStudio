@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.filterContainer, .filterName {
+.filterContainer, .filterName, .filterOption {
     display: flex;
     flex-direction: column;
 }
@@ -18,7 +18,7 @@
     font-size: 2rem;
 }
 
-.filterName {
+.filterName, .filterOption {
     margin-top: 30px;
 }
 
@@ -30,6 +30,7 @@
     padding: 10px 20px;
     font-family: 'Poppins';
     color: #FCFAF8;
+    margin-top: 10px;
 }
 
 .filterName label{
@@ -44,13 +45,17 @@
     padding: 10px 20px;
     font-family: 'Poppins';
     color: #FCFAF8;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .filterContainer select option {
     background-color: 121113;
     color: #FCFAF8;
     border: none;
+}
+
+.filterOption label {
+    color: #FCFAF8;
 }
 
 .cardBody {

@@ -40,14 +40,18 @@ export function FilterWork({ onFilter }) {
           />
         </div>
 
-        <select value={selectedCategory} onChange={handleCategoryChange}>
-          <option value="all">All</option>
-          <option value="App / Web Development">App / Web Development</option>
-          <option value="UI Design">UI Design</option>
-          <option value="UX Design">UX Design</option>
-          <option value="Prototyping">Prototyping</option>
-          <option value="Branding">Branding</option>
-        </select>
+        <div className='filterOption'>
+          <label htmlFor="select">Category</label>
+          <select value={selectedCategory} onChange={handleCategoryChange}>
+            <option value="all">All</option>
+            <option value="App / Web Development">App / Web Development</option>
+            <option value="UI Design">UI Design</option>
+            <option value="UX Design">UX Design</option>
+            <option value="Prototyping">Prototyping</option>
+            <option value="Branding">Branding</option>
+          </select>
+        </div>
+
       </div>
 
       <div className='cardBody'>
