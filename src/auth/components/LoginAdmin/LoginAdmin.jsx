@@ -28,24 +28,47 @@ export function LoginAdmin() {
       <div className="imgLogin">
         <img src={imgLogin} />
       </div>
-      <div className="formLogin">
+      <div className="formContainer">
         <form>
           <div className="logo">
             <img src={LogoBold} />
           </div>
-          <input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={(e) => handleLogin(e)}>Login</button>
+          <div className="buttonsSocial">
+            <button className="buttonA">
+              <ion-icon name="logo-apple"></ion-icon>
+              <a href="#">Sign  in with Apple</a>
+            </button>
+            <button className="buttonG">
+              <ion-icon name="logo-google"></ion-icon>
+              <a href="#">Sign  in with Google</a>
+            </button>
+          </div>
+          <h3>Or</h3>
+          <div className="formLogin">
+            <div>
+              <input
+                type="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="Signin">
+            <div className="check">
+              <input type="checkbox" />
+              <label htmlFor="checkbox">Remember me</label>
+            </div>
+            <button onClick={(e) => handleLogin(e)}>Login</button>
+          </div>
         </form>
       </div>
     </div>
