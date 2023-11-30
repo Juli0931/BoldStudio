@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import "./GlobalPage.css";
 import { NavBar } from "../../components";
-=======
-import { NavBar } from "../../components"
->>>>>>> eaeb78ed7a40919793ac897f9f046bc98a8cae87
 import {
   HomePage,
   AboutUsPage,
