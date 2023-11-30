@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import { LoginAdminPage, ControllerAdminPage } from './auth/pages';
 import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage.jsx";
-import { AuthProvider } from './auth/authContext.jsx';
+import { AuthContextProvider } from './auth/context/authContextProvider.jsx';
 
 export function App() {
   return (
-    <AuthProvider>
+    <AuthContextProvider>
     <Routes>
       <Route
           path='/'
@@ -24,6 +24,6 @@ export function App() {
         
         {/* Otras rutas */}
     </Routes>
-    </AuthProvider>
+    </AuthContextProvider>
   );
 }

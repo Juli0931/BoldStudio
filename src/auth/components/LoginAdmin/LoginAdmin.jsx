@@ -1,9 +1,9 @@
 //https://vitejs.dev/guide/assets.html
 import { useState } from 'react';
-import { useAuth } from '../../authContext';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
-function LoginAdmin() {
+export function LoginAdmin() {
   const navigate = useNavigate(); 
   const auth = useAuth();
   const [email, setEmail] = useState("")
@@ -41,5 +41,3 @@ function LoginAdmin() {
     </div>
   );
 }
-
-export default LoginAdmin;
