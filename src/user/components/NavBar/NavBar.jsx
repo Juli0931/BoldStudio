@@ -13,8 +13,13 @@ export function NavBar() {
   return (
     <nav className="nav" path="true">
       <ul>
-        <li onClick={() => scrollToSection("home")}>
-          <img src={Logo} alt="Logo Bold Studio" />
+        <li>
+          <img
+            src={Logo}
+            alt="Logo Bold Studio"
+            onClick={() => scrollToSection("home")}
+          />
+          <Link to="/#home"></Link>
         </li>
       </ul>
       <ul>
