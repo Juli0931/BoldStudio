@@ -12,6 +12,7 @@
 nav img {
   width: 150px;
   height: auto;
+  position: absolute;
   cursor: pointer;
 }
 
@@ -33,7 +34,7 @@ nav a:hover {
   color: #68dadb; 
 }
 
-nav li.active a {
+nav li:active a {
   color: #68dadb;
 }
 
@@ -41,3 +42,4 @@ nav li.active a {
   color: #68dadb;
   font-weight: 600;
 }
+

@@ -1,0 +1,18 @@
+.loginBody {
+    background-color: #FCFAF8;
+    display: flex;
+}
+
+.imgLogin img{
+    width: auto;
+    height: 100vh;
+}
+
+.formLogin {
+    display: flex;
+}
+
+.logo img{
+    width: 300px;
+    height: auto;
+}
