@@ -1,9 +1,9 @@
-import React from 'react';
-import { FormAdmin } from '../../components';
+import React from "react";
+import { FormAdmin } from "../../components";
 
 export function ControllerAdminPage() {
   const handleFormSubmit = (formData) => {
-    console.log('Form data submitted:', formData);
+    console.log("Form data submitted:", formData);
   };
 
   return (

@@ -1,29 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import { LoginAdminPage, ControllerAdminPage } from './auth/pages';
-import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage.jsx";
-import { AuthProvider } from './auth/authContext.jsx';
+import React from "react";
+import { AppRouter } from "./AppRouter";
+import { AuthContextProvider } from './auth/context/authContextProvider.jsx';
 
 export function App() {
   return (
-    <AuthProvider>
-    <Routes>
-      <Route
-          path='/'
-          element={<GlobalPage />}
-        />
-
-      <Route
-          path='/login'
-          element={<LoginAdminPage />}
-        />
-
-      <Route
-          path='/controllerAdmin'
-          element={<ControllerAdminPage />}
-        />
-        
-        {/* Otras rutas */}
-    </Routes>
-    </AuthProvider>
+    <AuthContextProvider>
+      <AppRouter />
+    </AuthContextProvider>
   );
 }

@@ -1,13 +1,14 @@
-import { StaffMember, HeaderTitle } from './../../components'; 
+import { StaffMember, HeaderTitle } from "./../../components";
 
+//Pendiente de agregar las fotos
 const staffData = [
-  { img: '', role: 'FRONTEND DEVELOPER' },
-  { img: '', role: 'BACKEND DEVELOPER' },
-  { img: '', role: 'UI DESIGNER' },
-  { img: '', role: 'UX DESIGNER' },
+  { img: "", role: "FRONTEND DEVELOPER" },
+  { img: "", role: "BACKEND DEVELOPER" },
+  { img: "", role: "UI DESIGNER" },
+  { img: "", role: "UX DESIGNER" },
 ];
 
-export function StaffPage (){
+export function StaffPage() {
   return (
     <div>
       <HeaderTitle title="Staff" />
@@ -18,4 +19,4 @@ export function StaffPage (){
       </div>
     </div>
   );
-};
+}

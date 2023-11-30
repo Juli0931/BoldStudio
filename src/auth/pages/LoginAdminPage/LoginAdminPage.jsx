@@ -1,4 +1,4 @@
-import LoginAdmin from "../../components/LoginAdmin/LoginAdmin";
+import { LoginAdmin } from "../../components/LoginAdmin/LoginAdmin";
 
 export function LoginAdminPage() {
   return (

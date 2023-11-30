@@ -3,9 +3,9 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from '../../../firebase/firebase.config';
 // import styles from './FilterStyle.css'
 
-export function FilterWork ({ onFilter }) {
-  const [filterText, setFilterText] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+export function FilterWork({ onFilter }) {
+  const [filterText, setFilterText] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleFilterTextChange = (e) => {
     setFilterText(e.target.value);
