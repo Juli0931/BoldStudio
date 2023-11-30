@@ -1,20 +1,61 @@
-import { StaffMember, HeaderTitle } from "./../../components";
+import React, { useState, useEffect, useRef } from 'react';
+import { StaffMember, HeaderTitle } from './../../components';
+import Dilan from '../../assets/Dilan.png';
+import Santiago from '../../assets/Santiago.png';
+import './StaffPage.css';
 
-//Pendiente de agregar las fotos
 const staffData = [
-  { img: "", role: "FRONTEND DEVELOPER" },
-  { img: "", role: "BACKEND DEVELOPER" },
-  { img: "", role: "UI DESIGNER" },
-  { img: "", role: "UX DESIGNER" },
+  { img: Santiago, role: 'BACKEND DEVELOPER' },
+  { img: Dilan, role: 'FRONTEND DEVELOPER' },
+  { img: Santiago, role: 'UI DESIGNER' },
+  { img: Dilan, role: 'UX DESIGNER' },
 ];
 
 export function StaffPage() {
+  const [showTitle, setShowTitle] = useState(false);
+  const colors = ['#01B0B5', '#FFF', '#ED447B', '#121113'];
+  const staffSectionRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setShowTitle(entry.isIntersecting);
+      });
+    }, options);
+
+    if (staffSectionRef.current) {
+      observer.observe(staffSectionRef.current);
+    }
+
+    return () => {
+      if (staffSectionRef.current) {
+        observer.unobserve(staffSectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div>
-      <HeaderTitle title="Staff" />
-      <div className="staffMembers">
+    <div className='staffBody'>
+      {showTitle && (
+        <div className="title">
+          <HeaderTitle title="Staff"/>
+        </div>
+      )}
+      
+      <div className="staffMembers" ref={staffSectionRef}>
         {staffData.map((staff, index) => (
-          <StaffMember key={index} img={staff.img} role={staff.role} />
+          <StaffMember 
+            key={index} 
+            img={staff.img} 
+            role={staff.role} 
+            backgroundColor={colors[index % colors.length]}
+          />
         ))}
       </div>
     </div>

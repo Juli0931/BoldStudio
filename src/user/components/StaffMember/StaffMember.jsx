@@ -1,8 +1,10 @@
-export function StaffMember({ img, role }) {
+import './StaffMember.css';
+
+export function StaffMember({ img, role, backgroundColor }) {
   return (
-    <div>
-      <img src={img} alt="Staff member" />
+    <div className='staffMember' style={{ backgroundColor }}>
       <h3>{role}</h3>
+      <img src={img} alt={`Avatar of ${role}`} />
     </div>
   );
 }
