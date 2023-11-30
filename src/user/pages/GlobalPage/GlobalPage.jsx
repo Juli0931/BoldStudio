@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { NavBar } from "../../components";
+=======
+import { NavBar } from "../../components"
+>>>>>>> 4ba3845e8a0637920fd5f93a3dbcade827e70b37
 import {
   HomePage,
   AboutUsPage,
