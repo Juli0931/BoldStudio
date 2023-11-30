@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getDocs, collection } from "firebase/firestore";
+import { db } from '../../../firebase/firebase.config';
 // import styles from './FilterStyle.css'
 
 export function FilterWork ({ onFilter }) {
@@ -15,7 +17,20 @@ export function FilterWork ({ onFilter }) {
     onFilter({ text: filterText, category: e.target.value });
   };
 
+  const [projects, setProjects] = useState([]);
+
+useEffect(() => {
+ const fetchProjects = async () => {
+  const response = await getDocs(collection(db, 'projects'));
+  const projectsData = response.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  setProjects(projectsData);
+ };
+
+ fetchProjects();
+}, []);
+
   return (
+    <>
     <div className='filterContainer'>
       <input
         type="text"
@@ -32,5 +47,20 @@ export function FilterWork ({ onFilter }) {
         <option value="Branding">Branding</option>
       </select>
     </div>
+    <div>
+
+  {projects.map(project => (
+    <div key={project.id} className='card'>
+      <h2>{project.title}</h2>
+      <p>{project.description}</p>
+      <p>{project.category}</p>
+      <p>{project.project}</p>
+      <img src={project.miniature} alt="" />
+    </div>
+  ))}
+ </div>
+
+  </>
+    
   );
 }
