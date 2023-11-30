@@ -14,7 +14,12 @@ export function NavBar() {
     <nav className="nav" path="true">
       <ul>
         <li>
-          <img src={Logo} alt="Logo Bold Studio" />
+          <img
+            src={Logo}
+            alt="Logo Bold Studio"
+            onClick={() => scrollToSection("home")}
+          />
+          <Link to="/#home"></Link>
         </li>
       </ul>
       <ul>
