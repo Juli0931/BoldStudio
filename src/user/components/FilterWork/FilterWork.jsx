@@ -8,13 +8,19 @@ export function FilterWork({ onFilter }) {
 
   const handleFilterTextChange = (e) => {
     setFilterText(e.target.value);
-    onFilter({ text: e.target.value, category: selectedCategory });
-  };
+    if (typeof onFilter === 'function') {
+     onFilter({ text: e.target.value, category: selectedCategory });
+    }
+   };
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    onFilter({ text: filterText, category: e.target.value });
-  };
+    if (typeof onFilter === 'function') {
+      onFilter({ text: filterText, category: e.target.value });
+    }}
+
+  const filteredProjects = selectedCategory === "all" ? projects : projects.filter(project => project.category === selectedCategory);
+  const searchedProjects = filterText === "" ? filteredProjects : filteredProjects.filter(project => project.title.toLowerCase().includes(filterText.toLowerCase()));
 
   return (
     <>
@@ -28,24 +34,21 @@ export function FilterWork({ onFilter }) {
       <select value={selectedCategory} onChange={handleCategoryChange}>
         <option value="all">All</option>
         <option value="App / Web Development">App / Web Development</option>
-        <option value="UI design">UI Design</option>
-        <option value="UX design">UX Design</option>
+        <option value="UI Design">UI Design</option>
+        <option value="UX Design">UX Design</option>
         <option value="Prototyping">Prototyping</option>
         <option value="Branding">Branding</option>
       </select>
     </div>
-    <div>
 
-    </div>
-      
       <div>
-        {projects.map(project => (
+        {searchedProjects.map(project => (
           <div key={project.id} className='card'>
             <h2>{project.title}</h2>
             <p>{project.description}</p>
             <p>{project.category}</p>
             <p>{project.project}</p>
-            <img src={project.imageUrl} alt="" />
+            <img src={project.imageUrl}/>
           </div>
         ))}
       </div>
