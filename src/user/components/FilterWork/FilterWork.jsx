@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 // import styles from './FilterStyle.css'
 
-export function FilterWork ({ onFilter }) {
-  const [filterText, setFilterText] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+export function FilterWork({ onFilter }) {
+  const [filterText, setFilterText] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const handleFilterTextChange = (e) => {
     setFilterText(e.target.value);
@@ -16,7 +16,7 @@ export function FilterWork ({ onFilter }) {
   };
 
   return (
-    <div className='filterContainer'>
+    <div className="filterContainer">
       <input
         type="text"
         placeholder="Search names, projects or categories"

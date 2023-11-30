@@ -1,13 +1,12 @@
-import './GlobalPage.css'
-import { NavBar } from "../../components"
+import "./GlobalPage.css";
+import { NavBar } from "../../components";
 import {
   HomePage,
   AboutUsPage,
   ServicesPage,
   ValuesPage,
   WorkPage,
-  // ProjectDetailPage,
-  ContactUsPage
+  ContactUsPage,
 } from "..";
 
 export function GlobalPage() {
@@ -15,7 +14,7 @@ export function GlobalPage() {
     <>
       <NavBar />
 
-      <div className='scroll'>
+      <div className="scroll">
         <section id="home">
           <HomePage />
         </section>
@@ -39,7 +38,6 @@ export function GlobalPage() {
         <section id="contact">
           <ContactUsPage />
         </section>
-
       </div>
     </>
   );
