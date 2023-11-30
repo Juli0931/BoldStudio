@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { GlobalPage } from "./user/pages/GlobalPage/GlobalPage";
 import { ControllerAdminPage, LoginAdminPage } from "./auth/pages";
+import { PrivateRoute } from "./PrivateRoute";
 
 export function AppRouter() {
   return (
@@ -8,7 +9,14 @@ export function AppRouter() {
       <Routes>
         <Route path="/" element={<GlobalPage />} />
         <Route path="/login" element={<LoginAdminPage />} />
-        <Route path="/controllerAdmin" element={<ControllerAdminPage />} />
+        <Route
+          path="/controllerAdmin"
+          element={
+            <PrivateRoute>
+              <ControllerAdminPage />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </main>
   );
