@@ -55,7 +55,7 @@ useEffect(() => {
       <p>{project.description}</p>
       <p>{project.category}</p>
       <p>{project.project}</p>
-      <img src={project.miniature} alt="" />
+      <img src={project.imageUrl} alt="" />
     </div>
   ))}
  </div>

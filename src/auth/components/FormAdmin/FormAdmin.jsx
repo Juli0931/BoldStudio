@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "../../../firebase/firebase.config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import "firebase/firestore";
 
 export function FormAdmin({ onFormSubmit }) {
@@ -8,7 +9,7 @@ export function FormAdmin({ onFormSubmit }) {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [project, setProject] = useState("");
-  const [miniature, setMiniature] = useState("");
+  const [image, setImage] = useState(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleTitleChange = (e) => {
@@ -27,27 +28,44 @@ export function FormAdmin({ onFormSubmit }) {
     setProject(e.target.value);
   };
 
-  const handleMiniature = (e) => {
-    setMiniature(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
    
     try {
-     const projectsCollection = collection(db, 'projects');
-     await addDoc(projectsCollection, { title, description, category, project, miniature});
+      const projectsCollection = collection(db, 'projects');
+      const newDocRef = await addDoc(projectsCollection, { title, description, category, project});
 
-     setTitle("");
+      const storage = getStorage();
+      const storageRef = ref(storage, 'images/' + newDocRef.id);
+      const uploadTask = uploadBytesResumable(storageRef, image);
+
+  uploadTask.on('state_changed', 
+    (snapshot) => {
+      // Puedes mostrar el progreso del subido aquí
+    }, 
+    (error) => {
+      console.error("Error al enviar image a Firebase:", error);
+    }, 
+    async () => {
+      // Cuando el subido se completa, obtén la URL de la imagen
+      const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
+
+      // Aquí puedes actualizar el documento en Firestore con la URL de la imagen
+      await updateDoc(doc(db, 'projects', newDocRef.id), { imageUrl });
+
+      setTitle("");
       setDescription("");
       setCategory("");
       setProject("");
-      setMiniature("")
+      setImage(null);
       setShowSuccessModal(true);
 
-    } catch (error) {
+    })} catch (error) {
      console.error("Error al enviar datos a Firebase:", error);
     }
+   };
+   const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
    };
 
   const closeModal = () => {
@@ -96,14 +114,12 @@ export function FormAdmin({ onFormSubmit }) {
           />
         </div>
         <div>
-          <label>Miniature link:</label>
-          <input
-            type="text"
-            value={miniature}
-            onChange={(e) => handleMiniature(e)}
-            required
-          />
-        </div>
+        <label>Miniature:</label>
+        <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        /></div>
         <button type="submit">Publish</button>
       </form>
 
