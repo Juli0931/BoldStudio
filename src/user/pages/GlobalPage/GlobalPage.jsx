@@ -12,8 +12,8 @@ import {
 
 export function GlobalPage() {
   return (
-    <div className='scroll'>
-
+    <>
+¿     <div>
       <NavBar />
       <div className="scroll">
       <section id="home">
@@ -43,6 +43,8 @@ export function GlobalPage() {
         <section id="contact">
           <ContactUsPage />
         </section>
+
+      </div>
 
       </div>
     </>
