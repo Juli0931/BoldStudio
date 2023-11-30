@@ -6,6 +6,7 @@ import {
   ValuesPage,
   WorkPage,
   ContactUsPage,
+  StaffPage,
 } from "..";
 
 export function GlobalPage() {
@@ -27,6 +28,10 @@ export function GlobalPage() {
         </section>
 
         <section>
+          <StaffPage />
+        </section>
+
+        <section id="values">
           <ValuesPage />
         </section>
 
