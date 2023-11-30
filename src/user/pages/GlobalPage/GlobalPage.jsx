@@ -5,16 +5,17 @@ import {
   ServicesPage,
   ValuesPage,
   WorkPage,
+  StaffPage,
   // ProjectDetailPage,
   ContactUsPage
 } from "..";
 
 export function GlobalPage() {
   return (
-    <>
+    <div className='scroll'>
+
       <NavBar />
 
-      <div className='scroll'>
         <section id="home">
           <HomePage />
         </section>
@@ -28,6 +29,10 @@ export function GlobalPage() {
         </section>
 
         <section>
+          <StaffPage />
+        </section>
+
+        <section id="values">
           <ValuesPage />
         </section>
 
@@ -39,7 +44,6 @@ export function GlobalPage() {
           <ContactUsPage />
         </section>
 
-      </div>
-    </>
+    </div>
   );
 }

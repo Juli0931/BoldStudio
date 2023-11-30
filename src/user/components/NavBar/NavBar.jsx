@@ -11,7 +11,7 @@ export function NavBar() {
   };
 
   return (
-    <nav className='nav' path="true">
+    <nav className='nav' id='menu' path="true">
       <ul>
         <li><img src={Logo} alt="Logo Bold Studio"/></li>
       </ul>
