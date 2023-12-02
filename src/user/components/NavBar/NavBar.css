@@ -2,7 +2,7 @@
   /* background-color: #121113; */
   position: fixed;
   top: 0;
-  width: 85vw;
+  width: 90vw;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -41,5 +41,9 @@ nav li:active a {
 .active-link {
   color: #68dadb;
   font-weight: 600;
+}
+
+.menuItems {
+  display: flex;
 }
 

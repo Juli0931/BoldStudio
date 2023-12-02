@@ -22,20 +22,24 @@ export function NavBar() {
             <Link to="/#home"></Link>
           </li>
         </ul>
-        <ul>
-          <li onClick={() => scrollToSection("about")}>
-            <Link to="/#about">ABOUT US</Link>
-          </li>
-          <li onClick={() => scrollToSection("work")}>
-            <Link to="/#work">WORK</Link>
-          </li>
-          <li onClick={() => scrollToSection("contact")}>
-            <Link to="/#contact">CONTACT</Link>
-          </li>
-          <li>
-            <Link to="/login">ADMIN</Link>
-          </li>
-        </ul>
+        <div className="menuItems">
+          <ul>
+            <li onClick={() => scrollToSection("about")}>
+              <Link to="/#about">ABOUT US</Link>
+            </li>
+            <li onClick={() => scrollToSection("work")}>
+              <Link to="/#work">WORK</Link>
+            </li>
+            <li onClick={() => scrollToSection("contact")}>
+              <Link to="/#contact">CONTACT</Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link to="/login"><ion-icon name="globe-outline"></ion-icon></Link>
+            </li>
+          </ul>
+        </div>
       </nav>
   );
 }

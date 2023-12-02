@@ -3,12 +3,13 @@ import { StaffMember, HeaderTitle } from './../../components';
 import Dilan from '../../assets/Dilan.png';
 import Santiago from '../../assets/Santiago.png';
 import Juli from '../../assets/Juli.png';
+import Ana from '../../assets/Ana.png';
 import './StaffPage.css';
 
 const staffData = [
   { img: Santiago, role: 'BACKEND DEVELOPER' },
   { img: Juli, role: 'FRONTEND DEVELOPER' },
-  { img: Santiago, role: 'UI DESIGNER' },
+  { img: Ana, role: 'UI DESIGNER' },
   { img: Dilan, role: 'UX DESIGNER' },
 ];
 
