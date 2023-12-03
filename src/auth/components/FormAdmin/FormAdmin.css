@@ -1,3 +1,8 @@
+.adminFormBody form {
+    display: flex;
+    justify-content: space-around;
+}
+
 .inputContainer{
     margin-top: 1rem;
 }
@@ -16,6 +21,11 @@
 
 .filterPost select{
     margin-left: 1rem;
+}
+
+.inputContainer, .filterPost, .uplodadFileInput{
+    display: flex;
+    flex-direction: column;
 }
 
 .inputContainer label{

@@ -74,54 +74,61 @@ export function FormAdmin({ onFormSubmit }) {
   };
 
   return (
-    <div>
+    <div className="adminFormBody">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="inputContainer">
-          <label>Title:</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => handleTitleChange(e)}
-            required
-          />
+
+        <div>
+          <div className="inputContainer">
+            <label>Title:</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => handleTitleChange(e)}
+              required
+            />
+          </div>
+          <div className="inputContainer">
+            <label>Description:</label>
+            <input
+              type="text"
+              value={description}
+              onChange={(e) => handleDescriptionChange(e)}
+              required
+            />
+          </div>
+          <div className="filterPost">
+            <label>Category:</label>
+            <select value={category} onChange={(e) => handleCategoryChange(e)} required>
+              <option value="">Select a category</option>
+              <option value="App / Web Development">App / Web Development</option>
+              <option value="UI Design">UI Design</option>
+              <option value="UX Design">UX Design</option>
+              <option value="Prototyping">Prototyping</option>
+              <option value="Branding">Branding</option>
+            </select>
+          </div>
         </div>
-        <div className="inputContainer">
-          <label>Description:</label>
+        
+        <div>
+          <div className="inputContainer">
+            <label>Project link:</label>
+            <input
+              type="text"
+              value={project}
+              onChange={(e) => handleProject(e)}
+              required
+            />
+          </div >
+          <div className="uplodadFileInput">
+          <label>Miniature:</label>
           <input
-            type="text"
-            value={description}
-            onChange={(e) => handleDescriptionChange(e)}
-            required
-          />
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+          /></div>
+          <button type="submit" className="publishButton">Publish</button>
         </div>
-        <div className="filterPost">
-          <label>Category:</label>
-          <select value={category} onChange={(e) => handleCategoryChange(e)} required>
-            <option value="">Select a category</option>
-            <option value="App / Web Development">App / Web Development</option>
-            <option value="UI Design">UI Design</option>
-            <option value="UX Design">UX Design</option>
-            <option value="Prototyping">Prototyping</option>
-            <option value="Branding">Branding</option>
-          </select>
-        </div>
-        <div className="inputContainer">
-          <label>Project link:</label>
-          <input
-            type="text"
-            value={project}
-            onChange={(e) => handleProject(e)}
-            required
-          />
-        </div >
-        <div className="uplodadFileInput">
-        <label>Miniature:</label>
-        <input
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-        /></div>
-        <button type="submit" className="publishButton">Publish</button>
+
       </form>
 
       {showSuccessModal && (

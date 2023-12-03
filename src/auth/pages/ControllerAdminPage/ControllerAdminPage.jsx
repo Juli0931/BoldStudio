@@ -12,7 +12,8 @@ export function ControllerAdminPage() {
     <>
     <NavBar />
     <div className="controllerBody">
-      <h1>Admin Control Panel</h1>
+      <h3>Admin Control Panel</h3>
+      <h2>Upload project</h2>
       <FormAdmin onFormSubmit={handleFormSubmit} />
     </div>
     </>
